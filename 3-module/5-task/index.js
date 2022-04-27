@@ -6,7 +6,7 @@ function getMinMax(str) {
       return +item;
     };
   }).map(item => +item);
-  result.min = Math.min.apply(null,subStr);
-  result.max = Math.max.apply(null,subStr);
+  result.min = Math.min(...subStr);
+  result.max = Math.max(...subStr);
   return result;
 }
