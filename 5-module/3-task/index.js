@@ -12,7 +12,7 @@ function initCarousel() {
     slideIndex += 1;
     carouselWrapper.style.transform = `translateX(-${slideIndex * sliderWidth}px)`;
     setArrow(slideIndex, arrowRight, arrowLeft, slideCount);
-  });
+  }); 
 
   arrowLeft.addEventListener('click', () => {
     slideIndex -= 1;
