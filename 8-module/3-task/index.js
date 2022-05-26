@@ -9,15 +9,18 @@ export default class Cart {
     let currentProduct = product && this.cartItems.find(item => {
       return item.product.id == product.id;
     });
-    if (!currentProduct) {
-      currentProduct = {
-        product,
-        count: 1
+    
+    if (product !== undefined && product !== null) {
+      if (!currentProduct) {
+        currentProduct = {
+          product,
+          count: 1
+        };
+        this.cartItems.push(currentProduct);
+      } else {
+        currentProduct.count += 1;
       };
-      this.cartItems.push(currentProduct);
-    } else {
-      currentProduct.count += 1;
-    };
+    }
 
     this.onProductUpdate(currentProduct);
   }
